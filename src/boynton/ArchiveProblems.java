@@ -181,9 +181,39 @@ public class ArchiveProblems {
         return sum;
     }
 
-    public static long largestProductInAGrid(String n) {
-//        for(int i = 0; i )
-        return 0;
+    public static double largestProductInAGrid(String n, int gridSize) {
+        double check;
+        double max = 0;
+        int r = 10; //radix
+        int size = gridSize;
+
+        //make enum for every direction
+        int[] dir = {-21, -20, -19, 1, 21, 20, 19, -1 };
+
+        int topLeftDiag;
+        int up;
+        int topRightDiag;
+        int right;
+        int bottomRightDiag;
+        int down;
+        int bottomLeftDiag;
+        int left;
+
+        for(int i = 0; i < n.length(); ++i) {
+            check = 1;
+            topLeftDiag = i - (gridSize+1)*3;
+            //loop over array, check so no iob errorsk
+            if (topLeftDiag > 0) {
+                for (int f = 0; f < 4; ++f) {
+                    check *= Character.digit(n.charAt(i - (gridSize+1)*f), r);
+                }
+                if (check > max) {
+                    check = max;
+                }
+            }
+
+        }
+        return max;
     }
 }
 

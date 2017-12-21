@@ -3,8 +3,15 @@ package boynton;
 public class EulerDriver {
 
     public static void main(String[] args) {
-        Problem12 x = new Problem12(500);
-        String verify = "" + x.getAnswer();
-        System.out.println(verify);
+
+        long startTime = System.nanoTime();
+
+
+        System.out.println(Problem14.getAnswer());
+
+
+        long endTime = System.nanoTime();
+
+        System.out.println("That took " + (endTime - startTime)/1e6 + " milliseconds");
     }
 }
